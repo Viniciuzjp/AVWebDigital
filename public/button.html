@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docs Component Button - @av-digital/components</title>
+    <meta name="author" content="@av-digital" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Estilo melhorado -->
+    <style>
+      :root {
+        --primary: #2563eb;
+        --primary-hover: #1d4ed8;
+        --background: #f4f4f5;
+        --text: #111827;
+        --card-bg: #ffffff;
+        --radius: 0.75rem;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Roboto, sans-serif;
+        background: var(--background);
+        color: var(--text);
+        padding: 2rem;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2 {
+        color: var(--text);
+        margin-bottom: 0.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+      }
+
+      main {
+        max-width: 768px;
+        margin: auto;
+      }
+
+      .card {
+        background: var(--card-bg);
+        padding: 2rem;
+        border-radius: var(--radius);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        margin: 2rem 0;
+      }
+
+      .button-demo {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      button.av-btn-primary {
+        background-color: var(--primary);
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      button.av-btn-primary:hover {
+        background-color: var(--primary-hover);
+      }
+
+      #output {
+        font-weight: 500;
+        margin-top: 1rem;
+        color: var(--primary);
+        min-height: 1.5rem;
+      }
+
+      ul {
+        padding-left: 1.25rem;
+        margin-top: 0.5rem;
+      }
+
+      li {
+        margin-bottom: 0.25rem;
+      }
+
+      code {
+        background: #e2e8f0;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.95rem;
+      }
+      .codesection {
+        background: #000000;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.95rem;
+      }
+      .demo {
+        background: #000000;
+        color: #55ff00;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        font-size: 0.95rem;
+      }
+    </style>
+
+    <!-- Script com simulação da lib -->
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
+        const mount = document.getElementById("button-mount");
+
+        const button = document.createElement("button");
+        button.className = "av-btn-primary";
+        button.textContent = "Clique aqui";
+        button.setAttribute("aria-label", "Botão de teste da biblioteca");
+
+        button.addEventListener("click", () => {
+          document.getElementById("output").textContent =
+            "Clicked!";
+        });
+
+        mount.appendChild(button);
+      });
+    </script>
+  </head>
+
+  <body>
+    <main>
+      <h1>Component: Button</h1>
+      <p style="text-align: center; max-width: 600px; margin: auto">
+        Button is a component reused from the
+        <code>@av-digital/components</code>, utilized to send formularys
+        and interface interactions.
+      </p>
+
+      <div class="card">
+        <h2>Interactive Example</h2>
+        <p>Click Here!</p>
+        <div class="button-demo" id="button-mount"></div>
+        <p id="output" aria-live="polite"></p>
+      </div>
+
+      <div class="card">
+        <h2>Available properties</h2>
+        <ul>
+          <li>
+            <code>variant</code>: <em>"primary"</em> | <em>"secondary"</em>
+          </li>
+          <pre class="codesection">
+            <code class="demo">
+&lt;Button variant="primary" /&gt;
+&lt;Button variant="secondary" /&gt;
+            </code>
+          </pre>
+          <li><code>disabled</code>: <em>boolean</em> — <em>default: false</li>
+                    <pre class="codesection">
+            <code class="demo">
+&lt;Button variant="primary" disabled /&gt;
+            </code>
+          </pre>
+          <li><code>onClick</code>: <em>() => void</em></li>
+                              <pre class="codesection">
+            <code class="demo">
+&lt;Button onClick={() => {}} /&gt;
+            </code>
+          </pre>
+          <li><code>children</code>: <em>ReactNode</em></li>
+                                        <pre class="codesection">
+            <code class="demo">
+&lt;Button&gt;Click here!&lt;/Button&gt;
+children => "Click here!"
+            </code>
+          </pre>
+        </ul>
+      </div>
+      <div class="card">
+        <p style="text-align: center; max-width: 600px; margin: auto">
+          <a
+            href="https://github.com/Viniciuzjp/AVDigital_components.git"
+            target="_blank"
+            rel="noopener noreferrer"
+            >See the source code on GitHub</a
+          >
+      </p>
+      </div>
+      <div class="card">
+        <p style="text-align: center; max-width: 600px; margin: auto">
+          <h2>Why use this component?</h2>
+          <ul>
+            <li>Pre-styled with consistent design</li>
+            <li>Supports accessibility and keyboard navigation</li>
+            <li>Customizable for different use cases</li>
+            <li>Ideal for both minimal and complex UI workflows</li>
+          </ul>
+      </p>
+      </div>
+    </main>
+  </body>
+</html>
